@@ -151,6 +151,13 @@ class RestaurantTableViewController: UITableViewController {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             }
             
+            if let popoverController = activityController.popoverPresentationController {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    popoverController.sourceView = cell
+                    popoverController.sourceRect = cell.bounds
+                }
+            }
+            
             self.present(activityController, animated: true, completion: nil)
             completionHandler(true)
         }
