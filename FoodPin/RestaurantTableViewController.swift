@@ -91,7 +91,7 @@ class RestaurantTableViewController: UITableViewController {
         // Determine the action tile by examining the status of restaurantIsVisited[indexPath.row]
         // If it is set to true, we set the title "Undo Check in".
         
-        let checkActionTitle = (restaurantIsVisited[indexPath.row]) ? "Undo Check in" : "Check in"
+        /*let checkActionTitle = (restaurantIsVisited[indexPath.row]) ? "Undo Check in" : "Check in"
         
         // Check-in action
         let checkInAction = UIAlertAction(title: checkActionTitle, style: .default, handler: {
@@ -115,7 +115,7 @@ class RestaurantTableViewController: UITableViewController {
             cell.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row] ? false : true
             
         })
-        optionMenu.addAction(checkInAction)
+        optionMenu.addAction(checkInAction)*/
         
         // Display the menu
         present(optionMenu, animated: true, completion: nil)
@@ -172,5 +172,24 @@ class RestaurantTableViewController: UITableViewController {
         
         return swipeConfiguration
     }
-
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        var visited = restaurantIsVisited[indexPath.row]
+        
+        let checkInAction = UIContextualAction(style: .normal, title: "") {
+            (action, sourceView, completionHandler) in
+            
+            visited = !visited
+            self.restaurantIsVisited[indexPath.row] = visited
+            self.tableView.reloadData()
+            completionHandler(true)
+        }
+        checkInAction.backgroundColor = UIColor.green
+        checkInAction.image = visited ? UIImage(named: "undo") : UIImage(named: "tick")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkInAction])
+        
+        return swipeConfiguration
+    }
 }
