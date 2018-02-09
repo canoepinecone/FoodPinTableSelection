@@ -123,5 +123,35 @@ class RestaurantTableViewController: UITableViewController {
         // Deselect the row
         tableView.deselectRow(at: indexPath, animated: false)
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
+            (action, sourceView, completionHandler) in
+            
+            self.restaurantNames.remove(at: indexPath.row)
+            self.restaurantLocations.remove(at: indexPath.row)
+            self.restaurantTypes.remove(at: indexPath.row)
+            self.restaurantIsVisited.remove(at: indexPath.row)
+            self.restaurantImages.remove(at: indexPath.row)
+            
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            completionHandler(true)
+        }
+        
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
+            
+            let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
+            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            
+            self.present(activityController, animated: true, completion: nil)
+            completionHandler(true)
+        }
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
+        return swipeConfiguration
+    }
 
 }
