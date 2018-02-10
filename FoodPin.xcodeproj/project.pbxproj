@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72788F73202D6C66002D7D71 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72788F72202D6C66002D7D71 /* RestaurantDetailViewController.swift */; };
+		72788F75202FAA41002D7D71 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72788F74202FAA41002D7D71 /* Restaurant.swift */; };
 		F4BD89C71F4E961C00588D6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD89C61F4E961C00588D6D /* AppDelegate.swift */; };
 		F4BD89CC1F4E961C00588D6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BD89CA1F4E961C00588D6D /* Main.storyboard */; };
 		F4BD89CE1F4E961C00588D6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4BD89CD1F4E961C00588D6D /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		72788F72202D6C66002D7D71 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		72788F74202FAA41002D7D71 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		F4BD89C31F4E961C00588D6D /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BD89C61F4E961C00588D6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4BD89CB1F4E961C00588D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72788F76202FAF24002D7D71 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F4BD89D81F4E96FB00588D6D /* RestaurantTableViewController.swift */,
+				72788F72202D6C66002D7D71 /* RestaurantDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72788F77202FAF48002D7D71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4BD89DA1F4EA9FC00588D6D /* RestaurantTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72788F78202FAF6B002D7D71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72788F74202FAA41002D7D71 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F4BD89BA1F4E961C00588D6D = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +85,14 @@
 		F4BD89C51F4E961C00588D6D /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				72788F78202FAF6B002D7D71 /* Model */,
+				72788F77202FAF48002D7D71 /* View */,
+				72788F76202FAF24002D7D71 /* Controller */,
 				F4BD89C61F4E961C00588D6D /* AppDelegate.swift */,
 				F4BD89CA1F4E961C00588D6D /* Main.storyboard */,
 				F4BD89CD1F4E961C00588D6D /* Assets.xcassets */,
 				F4BD89CF1F4E961C00588D6D /* LaunchScreen.storyboard */,
 				F4BD89D21F4E961C00588D6D /* Info.plist */,
-				F4BD89D81F4E96FB00588D6D /* RestaurantTableViewController.swift */,
-				F4BD89DA1F4EA9FC00588D6D /* RestaurantTableViewCell.swift */,
-				72788F72202D6C66002D7D71 /* RestaurantDetailViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -142,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72788F75202FAA41002D7D71 /* Restaurant.swift in Sources */,
 				F4BD89D91F4E96FB00588D6D /* RestaurantTableViewController.swift in Sources */,
 				F4BD89DB1F4EA9FC00588D6D /* RestaurantTableViewCell.swift in Sources */,
 				72788F73202D6C66002D7D71 /* RestaurantDetailViewController.swift in Sources */,
@@ -283,9 +311,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5QXR8QLH2;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.melinda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,9 +326,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5QXR8QLH2;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.melinda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
